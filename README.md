@@ -22,3 +22,8 @@ Exercise 1 – Service Charge
 Exercise 2 – Hot Food
 
 1.   When purchased items include any hot food apply a service charge of 20% to the total bill to a max of £20
+
+
+To run the project 
+cd  into CafeX
+Run ./mvnw clean install
