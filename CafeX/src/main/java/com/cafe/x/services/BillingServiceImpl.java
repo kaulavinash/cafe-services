@@ -17,11 +17,11 @@ public class BillingServiceImpl implements BillingService {
 		boolean isHot = order.isContainsHotFood();
 		if (containsFood && isHot) {
 			bill.addServiceCharges(TWENTY_PERCENT);
-		} else if (containsFood && !isHot) {
-			bill.addServiceCharges(TEN_PERCENT);
 			if(bill.getTotalServiceCharges().compareTo(SERVICE_CHARGE_LIMIT) > 0) {
 				bill.setTotalServiceCharges(TWENTY_PERCENT);
 			}
+		} else if (containsFood && !isHot) {
+			bill.addServiceCharges(TEN_PERCENT);
 		}
 		return bill;
 	}

@@ -27,7 +27,7 @@ public class Order {
 		totalAmount = totalAmount.add(item.getPrice());
 		if (!item.getIsBeverage()) {
 			containsFood = true;
-			if (!item.getTemparatureType().equals(TemperatureType.HOT)) {
+			if (item.getTemparatureType().equals(TemperatureType.HOT)) {
 				containsHotFood = true;
 			}
 		}

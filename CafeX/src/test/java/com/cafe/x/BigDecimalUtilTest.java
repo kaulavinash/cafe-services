@@ -29,10 +29,10 @@ public class BigDecimalUtilTest {
 	@Test
 	public void percentageValue2() {
 		try {
-			BigDecimal amount = BigDecimal.valueOf(500.50).setScale(2);
-			BigDecimal percentage = BigDecimal.valueOf(10.55).setScale(2);
+			BigDecimal amount = BigDecimal.valueOf(2.5).setScale(2);
+			BigDecimal percentage = BigDecimal.valueOf(10.00).setScale(2);
 			BigDecimal value = BigDecimalUtil.percentage(amount, percentage);
-			assertTrue(BigDecimal.valueOf(52.80).setScale(2).equals(value));
+			assertTrue(BigDecimal.valueOf(0.25).setScale(2).equals(value));
 		} catch (Exception e) {
 			System.out.println(e);
 		}
