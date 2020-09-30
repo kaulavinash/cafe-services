@@ -8,6 +8,7 @@ class CafeXApplicationTests {
 
 	@Test
 	void contextLoads() {
+		
 	}
 
 }
