@@ -15,6 +15,11 @@ import com.cafe.x.services.BillingServiceImpl;
 import com.cafe.x.services.OrderService;
 import com.cafe.x.services.OrderServiceImpl;
 
+/**
+ * Billing service tests
+ * @author avinashkaul
+ *
+ */
 @RunWith(SpringRunner.class)
 public class BillingServiceTest {
 
