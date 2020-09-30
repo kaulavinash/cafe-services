@@ -2,10 +2,11 @@
 
 Cafe X menu consists of the following items:
 
-Cola - Cold - 50p
-Coffee - Hot - £1.00
-Cheese Sandwich - Cold - £2.00
-Steak Sandwich - Hot - £4.50
+1. Cola - Cold - 50p
+2. Coffee - Hot - £1.00
+3. Cheese Sandwich - Cold - £2.00
+4. Steak Sandwich - Hot - £4.50
+
 Customers don’t know how much to tip and staff need tips to survive!
 
 Write some code to generate a bill including a service charge so customers don’t have to work out how much to tip, 
