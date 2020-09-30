@@ -40,7 +40,7 @@ public class BillingServiceTest {
 
 	}
 
-	private Order createOrderOnlyFood() {
+	private Order createOrderOnlyColdFood() {
 
 		Item food1 = new Item("Cheese Sandwich", TemperatureType.COLD, false, BigDecimal.valueOf(2.00));
 		Item food2 = new Item("Cheese Sandwich", TemperatureType.COLD, false, BigDecimal.valueOf(2.00));
@@ -52,8 +52,16 @@ public class BillingServiceTest {
 	
 	private Order createOrderHotFood() {
 
-		Item food1 = new Item("Steak Sandwich", TemperatureType.HOT, false, BigDecimal.valueOf(2.00));
-		Item food2 = new Item("Steak Sandwich", TemperatureType.HOT, false, BigDecimal.valueOf(2.00));
+		Item food1 = new Item("Steak Sandwich", TemperatureType.HOT, false, BigDecimal.valueOf(4.50));
+		Order order = new Order(food1);
+		return order;
+
+	}
+	
+	private Order createOrderHotColdFood() {
+
+		Item food1 = new Item("Cheese Sandwich", TemperatureType.COLD, false, BigDecimal.valueOf(2.00));
+		Item food2 = new Item("Steak Sandwich", TemperatureType.HOT, false, BigDecimal.valueOf(4.50));
 		Order order = new Order(food1);
 		order.addItem(food2);
 		return order;
@@ -62,8 +70,8 @@ public class BillingServiceTest {
 	
 	private Order createOrderHotFoodGreater20() {
 
-		Item food1 = new Item("Steak Sandwich", TemperatureType.HOT, false, BigDecimal.valueOf(200.00));
-		Item food2 = new Item("Steak Sandwich", TemperatureType.HOT, false, BigDecimal.valueOf(200.00));
+		Item food1 = new Item("Steak Sandwich", TemperatureType.HOT, false, BigDecimal.valueOf(100.00));
+		Item food2 = new Item("Cheese Sandwich", TemperatureType.COLD, false, BigDecimal.valueOf(20.00));
 		Order order = new Order(food1);
 		order.addItem(food2);
 		return order;
@@ -82,8 +90,8 @@ public class BillingServiceTest {
 	}
 
 	@Test
-	void testWhenBeverageAndFood() {
-		System.out.println("testWhenBeverageAndFood");
+	void testWhenBeverageAndColdFood() {
+		System.out.println("testWhenBeverageAndColdFood");
 		Order order = createOrderBeverageAndFood();
 		System.out.println("Order Total Amount : " + order.getTotalAmount());
 		Bill bill = billingService.generateBill(order);
@@ -93,9 +101,9 @@ public class BillingServiceTest {
 	}
 
 	@Test
-	void testWhenOnlyFood() {
-		System.out.println("testWhenOnlyFood");
-		Order order = createOrderOnlyFood();
+	void testWhenOnlyColdFood() {
+		System.out.println("testWhenOnlyColdFood");
+		Order order = createOrderOnlyColdFood();
 		System.out.println("Order Total Amount : " + order.getTotalAmount());
 		Bill bill = billingService.generateBill(order);
 		System.out.println("Service Charges : " + bill.getTotalServiceCharges());
@@ -107,6 +115,17 @@ public class BillingServiceTest {
 	void testWhenHotFood() {
 		System.out.println("testWhenHotFood");
 		Order order = createOrderHotFood();
+		System.out.println("Order Total Amount : " + order.getTotalAmount());
+		Bill bill = billingService.generateBill(order);
+		System.out.println("Service Charges : " + bill.getTotalServiceCharges());
+		System.out.println("Total Charges : " + bill.getTotalCharges());
+		System.out.println();
+	}
+	
+	@Test
+	void testWhenHotAndColdFood() {
+		System.out.println("testWhenHotAndColdFood");
+		Order order = createOrderHotColdFood();
 		System.out.println("Order Total Amount : " + order.getTotalAmount());
 		Bill bill = billingService.generateBill(order);
 		System.out.println("Service Charges : " + bill.getTotalServiceCharges());
