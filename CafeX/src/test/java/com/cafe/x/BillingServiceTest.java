@@ -31,6 +31,7 @@ public class BillingServiceTest {
 
 		Item beverage = new Item("Cola", TemperatureType.COLD, true, BigDecimal.valueOf(0.50));
 		Order orderOnlyBeverage = new Order(beverage);
+		System.out.println(orderOnlyBeverage);
 		return orderOnlyBeverage;
 
 	}
@@ -41,6 +42,7 @@ public class BillingServiceTest {
 		Item food = new Item("Cheese Sandwich", TemperatureType.COLD, false, BigDecimal.valueOf(2.00));
 		Order order = new Order(food);
 		order.addItem(beverage);
+		System.out.println(order);
 		return order;
 
 	}
@@ -51,6 +53,7 @@ public class BillingServiceTest {
 		Item food2 = new Item("Cheese Sandwich", TemperatureType.COLD, false, BigDecimal.valueOf(2.00));
 		Order order = new Order(food1);
 		order.addItem(food2);
+		System.out.println(order);
 		return order;
 
 	}
@@ -59,6 +62,7 @@ public class BillingServiceTest {
 
 		Item food1 = new Item("Steak Sandwich", TemperatureType.HOT, false, BigDecimal.valueOf(4.50));
 		Order order = new Order(food1);
+		System.out.println(order);
 		return order;
 
 	}
@@ -69,6 +73,7 @@ public class BillingServiceTest {
 		Item food2 = new Item("Steak Sandwich", TemperatureType.HOT, false, BigDecimal.valueOf(4.50));
 		Order order = new Order(food1);
 		order.addItem(food2);
+		System.out.println(order);
 		return order;
 
 	}
@@ -79,6 +84,7 @@ public class BillingServiceTest {
 		Item food2 = new Item("Cheese Sandwich", TemperatureType.COLD, false, BigDecimal.valueOf(20.00));
 		Order order = new Order(food1);
 		order.addItem(food2);
+		System.out.println(order);
 		return order;
 
 	}
@@ -104,6 +110,7 @@ public class BillingServiceTest {
 		System.out.println("Total Charges : " + bill.getTotalCharges());
 		System.out.println();
 	}
+	
 
 	@Test
 	void testWhenOnlyColdFood() {
