@@ -4,6 +4,10 @@ import java.math.BigDecimal;
 
 import com.cafe.x.util.BigDecimalUtil;
 
+/**
+ * @author avinashkaul
+ *
+ */
 @lombok.Data
 @lombok.RequiredArgsConstructor
 public class Bill {
